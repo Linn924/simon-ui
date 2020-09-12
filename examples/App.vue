@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <simon-button></simon-button>
+    <simon-button type="primary" color="#67C23A"></simon-button>
   </div>
 </template>
 
