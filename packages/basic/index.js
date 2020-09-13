@@ -1,5 +1,5 @@
 // 暴露组件
-import simonButton from './src/simonButton.vue'
+import simonButton from './src/button.vue'
 simonButton.install = vue => {
   vue.component(simonButton.name, simonButton)
 }

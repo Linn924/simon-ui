@@ -1,9 +1,9 @@
-import simonButton from './simonButton'
+import simonButton from './basic'
 
 // 所有组件列表
 const components = [simonButton]
 // 定义install方法，接收Vue作为参数
-const install = function(Vue) {
+const install = Vue => {
   // 判断是否安装，安装过就不继续往下执行
   if (install.installed) return
   install.installed = true

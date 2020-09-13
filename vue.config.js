@@ -29,7 +29,8 @@ module.exports = {
         return options
       })
 
-      config.externals({
+      //在html页面引用的配置
+      config.set('externals', {
         'jquery':'$'
       })
   }
