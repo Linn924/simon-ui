@@ -15,7 +15,7 @@ const install = function(Vue) {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
-console.log(components)
+// console.log(components)
 export default {
   install,
   // 所有组件，必须具有install，才能使用Vue.use()

@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <simon-button type="primary" color="#67C23A"></simon-button>
+    <simon-button type="default"></simon-button>
+    <simon-button type="primary"></simon-button>
+    <simon-button type="success"></simon-button>
+    <simon-button type="info"></simon-button>
+    <simon-button type="warning"></simon-button>
+    <simon-button type="danger"></simon-button>
   </div>
 </template>
 
@@ -12,4 +17,10 @@ export default {
 </script>
 
 <style lang="less">
+#app{
+  background-color: #ccc;
+}
+.simon-button{
+  margin: 0 10px;
+}
 </style>
