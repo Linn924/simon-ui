@@ -9,15 +9,6 @@
       <simon-button type="danger">危险按钮</simon-button>
     </div>
     <br>
-    <div class="plain">
-      <simon-button plain>默认按钮</simon-button>
-      <simon-button type="primary" plain>主要按钮</simon-button>
-      <simon-button type="success" plain>成功按钮</simon-button>
-      <simon-button type="info" plain>信息按钮</simon-button>
-      <simon-button type="warning" plain>警告按钮</simon-button>
-      <simon-button type="danger" plain>危险按钮</simon-button>
-    </div>
-    <br>
     <div class="round">
       <simon-button round>默认按钮</simon-button>
       <simon-button type="primary" round>主要按钮</simon-button>
@@ -36,13 +27,15 @@
       <simon-button type="danger" disabled>危险按钮</simon-button>
     </div>
     <br>
-    <div class="disabled plain">
-      <simon-button plain disabled>默认按钮</simon-button>
-      <simon-button type="primary" plain disabled>主要按钮</simon-button>
-      <simon-button type="success" plain disabled>成功按钮</simon-button>
-      <simon-button type="info" plain disabled>信息按钮</simon-button>
-      <simon-button type="warning" plain disabled>警告按钮</simon-button>
-      <simon-button type="danger" plain disabled>危险按钮</simon-button>
+    <div class="size">
+      <simon-button>默认按钮</simon-button>
+      <simon-button size="medium">中等按钮</simon-button>
+      <simon-button size="small">小型按钮</simon-button>
+      <simon-button size="mini">超小按钮</simon-button>
+    </div>
+    <br>
+    <div class="custom">
+      <simon-button color="#00cec9" fontColor="#fff" size="small" disabled>自定义颜色</simon-button>
     </div>
   </div>
 </template>
@@ -63,7 +56,7 @@ export default {
 #app{
   background-color: #ccc;
 }
-.simon-button{
-  margin: 0 10px;
+button{
+  margin: 10px 10px;
 }
 </style>
