@@ -37,6 +37,10 @@
     <div class="custom">
       <simon-button color="#00cec9" fontColor="#fff" size="small" disabled>自定义颜色</simon-button>
     </div>
+    <br>
+    <simon-button type="primary">
+      <simon-icon icon-class="bianji"></simon-icon>
+    </simon-button>
   </div>
 </template>
 

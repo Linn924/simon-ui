@@ -1,7 +1,6 @@
-import simonButton from './basic'
-
+import obj from './components'
 // 所有组件列表
-const components = [simonButton]
+const components = [obj.simonButton,obj.simonIcon]
 // 定义install方法，接收Vue作为参数
 const install = Vue => {
   // 判断是否安装，安装过就不继续往下执行

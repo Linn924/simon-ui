@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/css/global.css'
+import './assets/js/iconfont.js'
 
 import $ from 'jquery'
 // 引入组件

@@ -9,7 +9,7 @@
   </button>
 </template>
 <script>
-import $ from 'jquery'
+// import $ from 'jquery'
 export default {
   name: 'simonButton', // 注意这个name是必须的
   props:{//组件之间传值
