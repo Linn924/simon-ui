@@ -10,10 +10,10 @@
 export default {
     name:'simonIcon',
     props: {
-    iconClass: {
-      type: String,
-      required: true
-    }
+      iconClass: {
+        type: String,
+        required: true
+      },
   },
   computed: {
     iconName() {

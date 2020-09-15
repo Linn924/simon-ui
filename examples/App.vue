@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+
+    <!-- 默认按钮 -->
     <div class="default">
       <simon-button>默认按钮</simon-button>
       <simon-button type="primary">主要按钮</simon-button>
@@ -8,7 +10,8 @@
       <simon-button type="warning">警告按钮</simon-button>
       <simon-button type="danger">危险按钮</simon-button>
     </div>
-    <br>
+
+    <!-- 圆角按钮 -->
     <div class="round">
       <simon-button round>默认按钮</simon-button>
       <simon-button type="primary" round>主要按钮</simon-button>
@@ -17,7 +20,8 @@
       <simon-button type="warning" round>警告按钮</simon-button>
       <simon-button type="danger" round>危险按钮</simon-button>
     </div>
-    <br>
+
+    <!-- 禁用按钮 -->
     <div class="disabled">
       <simon-button disabled>默认按钮</simon-button>
       <simon-button type="primary" disabled>主要按钮</simon-button>
@@ -26,36 +30,56 @@
       <simon-button type="warning" disabled>警告按钮</simon-button>
       <simon-button type="danger" disabled>危险按钮</simon-button>
     </div>
-    <br>
+
+    <!-- 定义按钮尺寸 -->
     <div class="size">
       <simon-button>默认按钮</simon-button>
       <simon-button size="medium">中等按钮</simon-button>
       <simon-button size="small">小型按钮</simon-button>
       <simon-button size="mini">超小按钮</simon-button>
     </div>
-    <br>
+
+    <!-- 自定义按钮 -->
     <div class="custom">
       <simon-button color="#00cec9" fontColor="#fff" size="small" disabled>自定义颜色</simon-button>
     </div>
-    <br>
-    <simon-button type="primary">
-      <simon-icon icon-class="share"></simon-icon>
-    </simon-button>
-    <simon-button type="primary">
-      <simon-icon icon-class="search"></simon-icon>
-    </simon-button>
-    <simon-button type="primary">
-      <simon-icon icon-class="edit"></simon-icon>
-    </simon-button>
-    <simon-button type="primary">
-      <simon-icon icon-class="delete"></simon-icon>
-    </simon-button>
-    <simon-button type="primary">
-      <simon-icon icon-class="check"></simon-icon>
-    </simon-button>
-    <simon-button type="primary">
-      <simon-icon icon-class="letter"></simon-icon>
-    </simon-button>
+
+    <!-- 带图标的按钮 -->
+    <div class="icon">
+      <simon-button type="primary">
+        <simon-icon icon-class="share"></simon-icon>
+      </simon-button>
+      <simon-button type="primary">
+        <simon-icon icon-class="search"></simon-icon>
+      </simon-button>
+      <simon-button type="primary">
+        <simon-icon icon-class="edit"></simon-icon>
+      </simon-button>
+      <simon-button type="primary">
+        <simon-icon icon-class="delete"></simon-icon>
+      </simon-button>
+      <simon-button type="primary">
+        <simon-icon icon-class="check"></simon-icon>
+      </simon-button>
+      <simon-button type="primary">
+        <simon-icon icon-class="letter"></simon-icon>
+      </simon-button>
+    </div>
+
+    <!-- 按钮组 -->
+    <div class="buttonGroup">
+        <simon-button-group>
+            <simon-button type="primary">
+              <simon-icon icon-class="edit"></simon-icon>
+            </simon-button>
+            <simon-button type="primary">
+              <simon-icon icon-class="delete"></simon-icon>
+            </simon-button>
+            <simon-button type="primary">
+              <simon-icon icon-class="share"></simon-icon>
+            </simon-button>
+        </simon-button-group>
+    </div>
   </div>
 </template>
 
