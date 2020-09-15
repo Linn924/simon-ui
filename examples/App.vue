@@ -39,7 +39,22 @@
     </div>
     <br>
     <simon-button type="primary">
-      <simon-icon icon-class="bianji"></simon-icon>
+      <simon-icon icon-class="share"></simon-icon>
+    </simon-button>
+    <simon-button type="primary">
+      <simon-icon icon-class="search"></simon-icon>
+    </simon-button>
+    <simon-button type="primary">
+      <simon-icon icon-class="edit"></simon-icon>
+    </simon-button>
+    <simon-button type="primary">
+      <simon-icon icon-class="delete"></simon-icon>
+    </simon-button>
+    <simon-button type="primary">
+      <simon-icon icon-class="check"></simon-icon>
+    </simon-button>
+    <simon-button type="primary">
+      <simon-icon icon-class="letter"></simon-icon>
     </simon-button>
   </div>
 </template>

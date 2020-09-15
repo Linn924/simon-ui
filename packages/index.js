@@ -1,6 +1,8 @@
-import obj from './components'
+import simonObj from './components'
+import './js/iconfont.js'
+
 // 所有组件列表
-const components = [obj.simonButton,obj.simonIcon]
+const components = [simonObj.simonButton,simonObj.simonIcon]
 // 定义install方法，接收Vue作为参数
 const install = Vue => {
   // 判断是否安装，安装过就不继续往下执行
@@ -14,9 +16,12 @@ const install = Vue => {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
-// console.log(components)
+console.log(components)
+
 export default {
   install,
   // 所有组件，必须具有install，才能使用Vue.use()
   ...components
 }
+
+
