@@ -41,7 +41,7 @@
 
     <!-- 自定义按钮 -->
     <div class="custom">
-      <simon-button color="#00cec9" fontColor="#fff" size="small" disabled>自定义颜色</simon-button>
+      <simon-button bgColor="#00cec9" fontColor="#fff" size="small" disabled>自定义颜色</simon-button>
     </div>
 
     <!-- 带图标的按钮 -->
@@ -80,6 +80,24 @@
             </simon-button>
         </simon-button-group>
     </div>
+
+    <simon-card title="卡片名称">
+      <simon-button type='primary'>按钮</simon-button>
+      <div v-for="o in 4" :key="o">
+        {{'列表内容 ' + o }}
+      </div>
+    </simon-card>
+
+    <simon-card title="卡片名称" fontColor="#FFF" bgColor="#1e90ff" width="50vw">
+      <simon-button type='primary' bgColor='#74b9ff'>按钮</simon-button>
+      <div v-for="o in 4" :key="o">
+        {{'列表内容 ' + o }}
+      </div>
+    </simon-card>
+
+
+
+
   </div>
 </template>
 
@@ -98,8 +116,5 @@ export default {
 <style lang="less">
 #app{
   background-color: #ccc;
-}
-button{
-  margin: 10px 10px;
 }
 </style>

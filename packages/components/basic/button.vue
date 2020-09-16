@@ -15,39 +15,27 @@ export default {
   props:{//组件之间传值
     type:{
       type: String,
-      default: () => {
-          return 'default'
-      }
+      default: 'default'
     },
     disabled:{
       type: Boolean,
-      default: () => {
-        return false
-      }
+      default: false
     },
     round:{
       type:Boolean,
-      default: () => {
-        return false
-      }
+      default: false
     },
     size:{
       type:String,
-      default:() => {
-        return ''
-      }
+      default:''
     },
-    color: {
+    bgColor: {
       type: String,
-      default () {
-          return ''
-      }
+      default:''
     },
     fontColor: {
       type: String,
-      default () {
-          return ''
-      }
+      default:'' 
     }
   },
   computed:{
@@ -83,8 +71,8 @@ export default {
     },
     styleList(){
       let list = {}
-      if (this.color) {
-          list['background'] = this.color
+      if (this.bgColor) {
+          list['background'] = this.bgColor
       }
       if (this.fontColor) {
           list['color'] = this.fontColor
