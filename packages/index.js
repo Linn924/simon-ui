@@ -2,7 +2,7 @@ import simonObj from './components'
 import './js/iconfont.js'
 
 // 所有组件列表
-const components = [simonObj.simonButton,simonObj.simonIcon,simonObj.simonButtonGroup,simonObj.simonCard]
+const components = [simonObj.simonButton,simonObj.simonIcon,simonObj.simonButtonGroup,simonObj.simonCard,simonObj.simonDialog]
 // 定义install方法，接收Vue作为参数
 const install = Vue => {
   // 判断是否安装，安装过就不继续往下执行

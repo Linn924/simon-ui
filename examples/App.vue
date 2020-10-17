@@ -95,8 +95,8 @@
       </div>
     </simon-card>
 
-
-
+    <button type='primary' @click="dialogShow">展示dialog</button>
+    <simon-dialog title="这是组件dialog" cancelTxt="点击取消" confirmTxt="点击确认" :visible="showDialog"></simon-dialog>
 
   </div>
 </template>
@@ -107,7 +107,12 @@ export default {
   name: 'App',
   data(){
     return {
-      
+        showDialog:false
+    }
+  },
+  methods:{
+    dialogShow(){
+      this.showDialog = true
     }
   }
 }
