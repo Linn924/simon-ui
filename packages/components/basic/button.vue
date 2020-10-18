@@ -88,7 +88,7 @@ export default {
   padding: 12px 20px;
   box-sizing: border-box;
   font-size: 14px;
-  border: 1px solid #dcdfe6;
+  border: 1px solid #DCDFE6;
   color: #606266;
   background-color: #fff;
   border-radius: 4px;
@@ -100,6 +100,7 @@ export default {
   &:focus{outline: none;}
 }
 .simon-btn--default{
+  border: 1px solid #DCDFE6;
   &:hover{opacity: 0.8;}
 }
 .simon-btn--primary{

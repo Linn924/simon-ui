@@ -1,17 +1,20 @@
 <template>
-    <div class="dialog" v-show="showDialog">
-        <div class="dialog-container" :style="styleList">
-            <div class="dialog-header">
-                <div class="dialog-title">{{title}}</div>
-                <simon-icon icon-class="close" @click="closeDialog"></simon-icon>
-            </div>
-            <slot v-if="showDialog"></slot>
-            <div class="dialog-footer">
-                <simon-button @click="cancel">{{cancelTxt}}</simon-button>
-                <simon-button @click="confirm" type="primary">{{confirmTxt}}</simon-button>
+    <transition name="dialog">
+        <div class="dialog" :style="dialogStyle" v-show="isShowDialog">
+            <div class="dialog-container" :style="styleList">
+                <div class="dialog-header">
+                    <div class="dialog-title">{{title}}</div>
+                    <simon-icon icon-class="close" @click.native="closeDialog"
+                        color="#979AA0" width="1em" height="1em"></simon-icon>
+                </div>
+                <slot></slot>
+                <div class="dialog-footer">
+                    <simon-button @click.native="cancel">{{cancelTxt}}</simon-button>
+                    <simon-button @click.native="confirm" type="primary">{{confirmTxt}}</simon-button>
+                </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -22,7 +25,7 @@ export default {
     props:{
         title:{
             type:String,
-            default:'这是标题'
+            default:'标题'
         },
         cancelTxt:{
             type:String,
@@ -34,29 +37,40 @@ export default {
         },
         width:{
             type:String,
-            default:'30vw'
+            default:'560px'
+        },
+        height:{
+            type:String,
+            default:'200px'
         },
         visible:{
+            type:Boolean,
+            default:false
+        },
+        mask:{
             type:Boolean,
             default:false
         }
     },
     data(){
         return {
-            showDialog:false
+            isShowDialog:false
         }
     },
     methods:{
         closeDialog(){
-            this.showDialog = false
+            this.cancel()
         },
         cancel(){
             this.$emit('cancel')
-            this.closeDialog()
         },
         confirm(){
             this.$emit('confirm')
-            this.closeDialog()
+        }
+    },
+    watch:{
+        visible(val){
+            this.isShowDialog = val
         }
     },
     computed:{
@@ -65,12 +79,17 @@ export default {
             if(this.width){
                 list['width'] = this.width
             }
+            if(this.height){
+                list['height'] = this.height
+            }
             return list
-        }
-    },
-    watch:{
-        visible(val){
-            this.showDialog = val
+        },
+        dialogStyle(){
+            let list = {}
+            if(this.mask){
+                list['backgroundColor'] = 'rgba(0,0,0,.5)'
+            }
+            return list
         }
     }
 }
@@ -90,20 +109,38 @@ export default {
     display: grid;
     height: 100vh;
     width: 100vw;
-    place-content: center center;
+    justify-content: center;
     .dialog-container{
+        margin-top: 15vh;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 2px 10px 0 rgba(0,0,0,0.12);
-        // padding: 20px;
+        padding: 0 20px;
         .dialog-header{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+            .dialog-title{
+                color: #303133;
+                font-size: 20px;
+            }
         }
         .dialog-footer{
             display: flex;
-            justify-content: space-around;
+            justify-content: flex-end;
+            button:last-child{margin: 0 0 0 20px;}
+        }
+        >div{
+            margin: 30px 0;
         }
     }
+}
+.dialog-enter-active,
+.dialog-leave-active
+{transition: all .2s;}
+
+.dialog-enter,
+.dialog-leave-to
+{
+    opacity: 0;
 }
 </style>

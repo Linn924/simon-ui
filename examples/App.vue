@@ -68,19 +68,20 @@
 
     <!-- 按钮组 -->
     <div class="buttonGroup">
-        <simon-button-group>
-            <simon-button type="primary">
-              <simon-icon icon-class="edit"></simon-icon>
-            </simon-button>
-            <simon-button type="primary">
-              <simon-icon icon-class="delete"></simon-icon>
-            </simon-button>
-            <simon-button type="primary">
-              <simon-icon icon-class="share"></simon-icon>
-            </simon-button>
-        </simon-button-group>
+      <simon-button-group>
+        <simon-button type="primary">
+          <simon-icon icon-class="edit"></simon-icon>
+        </simon-button>
+        <simon-button type="primary">
+          <simon-icon icon-class="delete"></simon-icon>
+        </simon-button>
+        <simon-button type="primary">
+          <simon-icon icon-class="share"></simon-icon>
+        </simon-button>
+      </simon-button-group>
     </div>
 
+    <!-- 卡片 -->
     <simon-card title="卡片名称">
       <simon-button type='primary'>按钮</simon-button>
       <div v-for="o in 4" :key="o">
@@ -95,31 +96,57 @@
       </div>
     </simon-card>
 
-    <button type='primary' @click="dialogShow">展示dialog</button>
-    <simon-dialog title="这是组件dialog" cancelTxt="点击取消" confirmTxt="点击确认" :visible="showDialog"></simon-dialog>
+    <simon-button type='primary' @click.native="visible = true">展示dialog</simon-button>
 
+    <!-- dialog -->
+    <simon-dialog title="提示" cancelTxt="取消" confirmTxt="确认" width="560px" height="200px" 
+      :visible="visible" @cancel="visible = false" @confirm="visible = false" :mask="true">
+      <div>
+        这是内容
+      </div>
+    </simon-dialog>
+
+
+    <!-- 提示信息 -->
+    <div>
+      <simon-button type='primary' @click.native="success">点击显示正确信息</simon-button>
+      <simon-button type='primary' @click.native="error">点击显示错误信息</simon-button>
+    </div>
+  
   </div>
 </template>
 
 <script>
-
-export default {
-  name: 'App',
-  data(){
-    return {
-        showDialog:false
-    }
-  },
-  methods:{
-    dialogShow(){
-      this.showDialog = true
+  export default {
+    name: 'App',
+    data() {
+      return {
+        visible: false
+      }
+    },
+    methods: {
+      // clickCancel() {
+      //   console.log('点击了取消')
+      //   this.visible = false
+      // },
+      // clickConfirm() {
+      //   console.log('点击了提交')
+      //   this.visible = false
+      // }
+      success(){
+        this.$message('success','这是一条成功信息',1000)
+      },
+      error(){
+        this.$message('error','这是一条错误信息',1000)
+      }
     }
   }
-}
+
 </script>
 
 <style lang="less">
-#app{
-  background-color: #ccc;
-}
+  #app {
+    background-color: #ccc;
+  }
+  #app>div{margin: 20px 0;}
 </style>
