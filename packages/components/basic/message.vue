@@ -82,15 +82,8 @@ export default {
 .message-leave-active
 {transition: all .75s;}
 
-.message-enter{
+.message-enter,
+.message-leave-to{
     opacity: 0;
-    animation: enter .75s linear forwards;
 }
-.message-leave-to
-{
-    opacity: 0;
-    animation: leave .75s linear forwards;
-}
-@keyframes enter {from{top: 0;}to{top: 5vh;}}
-@keyframes leave {from{top: 5vh;}to{top: 0;}}
 </style>
